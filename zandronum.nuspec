@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>zandronum</id>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <packageSourceUrl>https://github.com/n3rd4i/zandronum.git</packageSourceUrl>
     <owners>Andrei</owners>
     <!-- ============================== -->
