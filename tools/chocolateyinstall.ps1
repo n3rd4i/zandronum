@@ -18,7 +18,12 @@ Install-ChocolateyEnvironmentVariable `
   -VariableType Machine
 
 Install-ChocolateyShortcut `
+  -ShortcutFilePath "$(Join-Path $startMenuDir 'Config Folder.lnk')" `
+  -TargetPath "$cfgDir" `
+  -WorkingDirectory "$cfgDir"
+
+Install-ChocolateyShortcut `
   -ShortcutFilePath "$(Join-Path $startMenuDir Zandronum.lnk)" `
   -TargetPath "$(Join-Path $installLocation zandronum.exe)" `
   -IconLocation "$(Join-Path $installLocation zandronum.exe)" `
-  -WorkingDirectory "$installLocation"
+  -WorkingDirectory "$workDir"
