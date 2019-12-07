@@ -12,13 +12,18 @@ $packageArgs = @{
 }
 Install-ChocolateyZipPackage @packageArgs
 
+## Set environment variale to be used later (by other apps)
 Install-ChocolateyEnvironmentVariable `
   -VariableName $envZandronum `
   -VariableValue "$installLocation" `
-  -VariableType Machine
+  -VariableType 'Machine'
+
+## Create shortcut to config folders
+Install-ChocolateyShortcut `
+  -ShortcutFilePath "$(Join-Path $startMenuDir 'Config Folder.lnk')" `
+  -TargetPath "$workDir"
 
 Install-ChocolateyShortcut `
   -ShortcutFilePath "$(Join-Path $startMenuDir Zandronum.lnk)" `
   -TargetPath "$(Join-Path $installLocation zandronum.exe)" `
-  -IconLocation "$(Join-Path $installLocation zandronum.exe)" `
-  -WorkingDirectory "$installLocation"
+  -IconLocation "$(Join-Path $installLocation zandronum.exe)"
